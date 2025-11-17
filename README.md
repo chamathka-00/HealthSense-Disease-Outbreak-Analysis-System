@@ -36,9 +36,7 @@ This project demonstrates the ability to:
 
 * Create test plans and evaluate system behaviour.
 
-These fully map to the module learning outcomes for Semester 2.
-
-## 🖥️ System Features (As Required by the Coursework Brief)
+## 🖥️ System Features
 🔹 Add Hospitals & Disease Records
 
 * Add hospitals and store disease information (name + patient count).
@@ -87,15 +85,15 @@ Shows each hospital with its full disease list.
 
 * Classifies outbreaks:
 
-&nbsp;&nbsp;&nbsp;<20 = Mild, 21–50 = Moderate, >50 = Severe
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<20 = Mild, 21–50 = Moderate, >50 = Severe
 
 * Supports:
 
-&nbsp;&nbsp;&nbsp;* In-order traversal
+  * &nbsp;In-order traversal
 
-&nbsp;&nbsp;&nbsp;* Pre-order traversal
+  * &nbsp;Pre-order traversal
 
-&nbsp;&nbsp;&nbsp;* Post-order traversal
+  * &nbsp;Post-order traversal
 
 🔹 Trend Analysis (Merge Sort)
 
@@ -128,23 +126,23 @@ HealthSense/
 
 * Java / Custom Implementations
 
-* Singly Linked List
+  * &nbsp;Singly Linked List
 
-* Dynamic Arrays
+  * &nbsp;Dynamic Arrays
 
-* Custom Stack (LIFO)
+  * &nbsp;Custom Stack (LIFO)
 
-* Custom Queue (FIFO)
+  * &nbsp;Custom Queue (FIFO)
 
-* Binary Search Tree with recursion
+  * &nbsp;Binary Search Tree with recursion
 
 * Algorithms
 
-* Bubble Sort (disease sorting)
+  * &nbsp;Bubble Sort (disease sorting)
 
-* Merge Sort (trend analysis)
+  * &nbsp;Merge Sort (trend analysis)
 
-* Linear Search (diseases & hospitals)
+  * &nbsp;Linear Search (diseases & hospitals)
 
 * File handling (read/write structured records)
 
