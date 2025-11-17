@@ -1,12 +1,12 @@
 # HealthSense – Disease Outbreak Analysis System
 
-CM1601 – Programming Fundamentals
+CM1602 – Data Structures and Algorithms for AI
 
 BSc (Hons) Artificial Intelligence & Data Science
 
 Robert Gordon University (RGU)
 
-Coursework 2 – Y1S2
+Coursework – Y1S2
 
 ## 📌 Project Overview
 
