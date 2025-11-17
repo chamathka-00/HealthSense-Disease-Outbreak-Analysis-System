@@ -1,0 +1,5 @@
+western,Dengue,87
+sabaragamuwa,Dengue,65
+western,Covid19,38
+sabaragamuwa,Covid19,23
+north central,Influenza,71

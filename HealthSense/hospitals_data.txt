@@ -1,0 +1,4 @@
+General Hospital - Colombo:Dengue,35;Influenza,52;Dengue,13
+Teaching Hospital - Ratnapura:Covid19,12;Dengue,41;Influenza,22
+Base Hospital - Panadura:Malaria,31;Covid19,10
+Durdans Hospital - Colombo:
