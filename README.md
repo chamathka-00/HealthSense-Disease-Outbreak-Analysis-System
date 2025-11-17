@@ -105,23 +105,6 @@ Shows each hospital with its full disease list.
 
 Clean termination with a confirmation message.
 
-## 📂 Project Structure
-HealthSense/
-
-│── src/
-
-│   &nbsp;&nbsp;&nbsp;├── data/ (LinkedList, Stack, Queue, BST, Arrays)
-
-│   &nbsp;&nbsp;&nbsp;├── logic/ (sorting, searching, trend analysis)
-
-│   &nbsp;&nbsp;&nbsp;├── models/ (Hospital, DiseaseRecord, OutbreakReport)
-
-│   &nbsp;&nbsp;&nbsp;├── ui/ (menu system)
-
-│── healthsense.txt
-
-│── README.md
-
 ## ✔️ Technologies & Concepts Used
 
 * Java / Custom Implementations
@@ -151,20 +134,6 @@ HealthSense/
 * Time-series trend merging
 
 * Test plans to validate system operations
-
-## 🚀 How to Run
-
-1. Install Java (JDK 17 or later).
-
-2. Ensure your project files (including any text file storage) are in the correct directory.
-
-3. Compile the program:
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;javac *.java
-
-4. Run the program:
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;java Main
 
 ## 📜 Academic Integrity
 
