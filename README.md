@@ -137,8 +137,7 @@ Clean termination with a confirmation message.
 
 ## 📜 Academic Integrity
 
-This repository contains original work submitted to RGU for academic assessment.
-Re-use, redistribution, or submitting this project—modified or unmodified—for academic credit elsewhere is strictly prohibited.
+This repository contains original code written for submission to RGU. Reusing or submitting this work elsewhere without attribution may violate academic integrity guidelines.
 
 ## 📘 License
 
