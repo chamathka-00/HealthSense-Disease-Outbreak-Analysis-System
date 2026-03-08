@@ -1,146 +1,166 @@
-# HealthSense – Disease Outbreak Analysis System
+# HealthSense — Disease Outbreak Analysis System
 
-CM1602 – Data Structures and Algorithms for AI
+A command-line analytics system designed to help epidemiologists monitor and analyse disease outbreak data across multiple hospitals and regions. HealthSense uses custom data structures and algorithms to manage hospital disease records, sort and search trends, process outbreak reports, classify severity, and support undo operations — simulating real-world public health analytics workflows.
 
-BSc (Hons) Artificial Intelligence & Data Science
 
-Robert Gordon University (RGU)
 
-Coursework – Y1S2
+## Table of Contents
 
-## 📌 Project Overview
+- [Overview](#overview)
+- [Features](#features)
+- [Data Structures and Algorithms](#data-structures-and-algorithms)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Running the Application](#running-the-application)
+- [Usage Guide](#usage-guide)
+- [File Handling](#file-handling)
+- [Testing](#testing)
+- [License](#license)
 
-HealthSense is a command-line analytics system designed to help epidemiologists monitor and analyze disease outbreak data across multiple hospitals and regions. Developed for the second-semester Data Structures and Algorithms for AI module, the system uses custom data structures and algorithms to manage hospital disease records, sort and search trends, process outbreak reports, classify severity, and support undo operations.
 
-This project demonstrates structured algorithmic thinking, modular programming, and data-structure-driven problem solving while simulating real-world public-health analytics workflows.
 
-## 🎯 Learning Objectives
+## Overview
 
-This project demonstrates the ability to:
+HealthSense provides a structured, menu-driven interface for managing disease outbreak data. Users can register hospitals and their associated disease records, search and sort data, queue and process outbreak reports, classify severity using a Binary Search Tree, and analyse cross-hospital trends using Merge Sort. All core data structures — linked lists, stacks, queues, dynamic arrays, and BSTs — are implemented from scratch without relying on Java's built-in collections framework.
 
-* Analyze requirements and design custom data structures.
 
-* Apply sorting algorithms (Bubble Sort, Merge Sort) and searching (Linear Search).
 
-* Implement stacks, queues, linked lists, dynamic arrays, and binary search trees.
+## Features
 
-* Perform recursive operations for tree traversal.
+### Add Hospitals and Disease Records
+- Register hospitals and store associated disease records (disease name + patient count)
+- Hospital disease lists are backed by a custom singly linked list
+- Records are persisted to structured text files
 
-* Build a fully interactive text-based menu system.
+### Display All Hospital Data
+- Lists every registered hospital alongside its full disease record list
 
-* Manage undo operations using a custom stack.
+### Search Functions
+- Search by disease name across all hospitals
+- Search hospitals by total patient count
+- Both searches use Linear Search
 
-* Use time-series data analysis and merging logic to identify outbreak peaks.
+### Sort Disease Records
+- Sorts disease case counts within a selected hospital using Bubble Sort (descending order)
+- Automatically creates a backup of the unsorted state before sorting to support undo
 
-* Validate input and handle errors safely.
+### Undo Last Sort
+- Restores the most recent unsorted disease list using a custom LIFO stack
+- Stores the last 3 sort operations for rollback
 
-* Create test plans and evaluate system behaviour.
+### Outbreak Report Queue
+- Add outbreak reports containing region, disease name, and case count
+- Reports are stored in a custom FIFO queue and processed in arrival order
 
-## 🖥️ System Features
-🔹 Add Hospitals & Disease Records
+### Process Outbreak Reports
+- Dequeues and processes reports in order
+- Each case count is inserted into a Binary Search Tree for severity classification
 
-* Add hospitals and store disease information (name + patient count).
+### BST Severity Classification
+- Classifies outbreaks into three levels:
+  - Mild: fewer than 20 cases
+  - Moderate: 21–50 cases
+  - Severe: more than 50 cases
+- Supports in-order, pre-order, and post-order tree traversal
 
-* Hospital disease lists use a custom singly linked list.
+### Trend Analysis
+- Uses Merge Sort to sort diseases by case count across all hospitals
+- Merges sorted results to identify the top 3 peak outbreaks system-wide
 
-* Data saved in structured format to text files.
+### Exit
+- Clean termination with a confirmation message
 
-🔹 Display All Hospital Data
 
-Shows each hospital with its full disease list.
 
-🔹 Search Functions
+## Data Structures and Algorithms
 
-* Search by disease name across all hospitals.
+| Component | Implementation |
+|---|---|
+| Hospital disease lists | Custom singly linked list |
+| Record storage | Custom dynamic array |
+| Undo support | Custom stack (LIFO) |
+| Outbreak report processing | Custom queue (FIFO) |
+| Severity classification | Binary Search Tree with recursive traversal |
+| Disease sorting (per hospital) | Bubble Sort (descending) |
+| Trend analysis (cross-hospital) | Merge Sort |
+| Search (disease name, patient count) | Linear Search |
 
-* Search hospitals by total patient count.
 
-* Implements Linear Search for both.
 
-🔹 Sort Disease Records
+## Getting Started
 
-* Sorts disease counts within a hospital using Bubble Sort (descending).
+### Prerequisites
 
-* Makes a backup before sorting for undo support.
+- Java Development Kit (JDK) 11 or higher
+- Any Java IDE (IntelliJ IDEA, Eclipse, VS Code with Java extension) or command-line `javac`/`java`
 
-🔹 Undo Last Sort
+### Installation
 
-* Uses a custom stack (LIFO) to restore the last unsorted version.
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd healthsense
+   ```
 
-* Stores the last 3 operations.
+2. Compile the project:
+   ```bash
+   javac -d out src/**/*.java
+   ```
+   Or open in your IDE and build using the built-in build tool.
 
-🔹 Outbreak Report Queue
+### Running the Application
 
-* Add outbreak reports (region, disease, count).
+```bash
+java -cp out Main
+```
 
-* Stored in a custom queue, processed using FIFO.
+Or run `Main.java` directly from your IDE. The system launches a numbered menu — enter the corresponding number to select any operation.
 
-🔹 Process Outbreak Reports
 
-* Processes reports in arrival order.
 
-* Each case count is inserted into a Binary Search Tree for classification.
+## Usage Guide
 
-🔹 BST Severity Classification
+| Menu Option | Description |
+|---|---|
+| 1 | Add a hospital and disease records |
+| 2 | Display all hospitals and their disease lists |
+| 3 | Search by disease name across all hospitals |
+| 4 | Search hospitals by total patient count |
+| 5 | Sort disease records for a hospital (Bubble Sort) |
+| 6 | Undo the last sort operation |
+| 7 | Add an outbreak report to the queue |
+| 8 | Process queued outbreak reports (BST insertion) |
+| 9 | Display BST severity classification and traversals |
+| 10 | Run trend analysis — top 3 peak outbreaks (Merge Sort) |
+| 0 | Exit the application |
 
-* Classifies outbreaks:
+**Input validation** is applied throughout — invalid entries are rejected with a clear error message and the prompt is re-displayed.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<20 = Mild, 21–50 = Moderate, >50 = Severe
 
-* Supports:
 
-  * &nbsp;In-order traversal
+## File Handling
 
-  * &nbsp;Pre-order traversal
+Hospital and disease records are read from and written to structured text files in the project directory. This allows data to persist between sessions. The file format stores one record per line with fields separated by a consistent delimiter.
 
-  * &nbsp;Post-order traversal
 
-🔹 Trend Analysis (Merge Sort)
 
-* Uses Merge Sort to sort diseases by case count across all hospitals.
+## Testing
 
-* Merges results to identify the top 3 peak outbreaks.
+The project includes a test plan covering all major system operations. Validated scenarios include:
 
-🔹 Exit
+- Adding hospitals and disease records with valid and invalid inputs
+- Searching by disease name and patient count
+- Sorting and verifying descending order output
+- Undo restoring the correct pre-sort state
+- Enqueueing and processing outbreak reports in FIFO order
+- BST insertion and correct severity classification for boundary values (19, 20, 50, 51)
+- In-order, pre-order, and post-order traversal output validation
+- Merge Sort producing correctly ranked top-3 peak outbreaks
+- Empty data edge cases handled gracefully across all operations
 
-Clean termination with a confirmation message.
 
-## ✔️ Technologies & Concepts Used
 
-* Java / Custom Implementations
+## License
 
-  * &nbsp;Singly Linked List
-
-  * &nbsp;Dynamic Arrays
-
-  * &nbsp;Custom Stack (LIFO)
-
-  * &nbsp;Custom Queue (FIFO)
-
-  * &nbsp;Binary Search Tree with recursion
-
-* Algorithms
-
-  * &nbsp;Bubble Sort (disease sorting)
-
-  * &nbsp;Merge Sort (trend analysis)
-
-  * &nbsp;Linear Search (diseases & hospitals)
-
-* File handling (read/write structured records)
-
-* Menu-driven CLI with validation
-
-* Time-series trend merging
-
-* Test plans to validate system operations
-
-## 📜 Academic Integrity
-
-This repository contains original code written for submission to RGU. Reusing or submitting this work elsewhere without attribution may violate academic integrity guidelines.
-
-## 📘 License
-
-This project is licensed under the Apache License 2.0. You may view, use, and adapt the code for learning and educational purposes, provided that proper attribution is given as required by the license.
-
-Submitting this work, or any modified version of it, as part of an academic assessment is strictly prohibited.
+This project is licensed under the [MIT License](LICENSE).
